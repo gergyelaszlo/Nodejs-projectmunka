@@ -1,0 +1,12 @@
+<div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+        <main>
+            <form method="post" action="/admin/progression/edit/{{page.id}}?_method=PUT">
+                <label>Progression name</label>
+                <input type="text" class="form-control" name="title"
+                value="{{progression.title}}">
+                <button type="submit" class="btn btn-primary mt-3">Edit</button>
+            </form>
+        </main>
+    </div>
+</div>

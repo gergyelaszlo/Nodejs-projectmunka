@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            {{#each courses}}
+            <div class="card mb-4">
+                <img class="card-img-top" src="/uploads/{{file}}" alt="..." />
+                <div class="card-body">
+                    <h2 class="card-title">{{name}}</h2>
+                    <p class="card-text">{{subject.title}}</p>
+                    <p class="card-text">{{subject.body}}</p>
+                    <p class="card-text">{{generateDate dateToApply 'MMMM DD YYYY'}}</p>
+                    <a class="btn btn-primary" href="/course/{{id}}" >Read more →</a>
+                    <button id="applyBtn" class="btn btn-info" {{#if deadlinePassed}} disabled {{/if}} onclick="window.location.href = '/apply';">Apply</button>
+                </div>
+            </div>
+            <div class="card-footer">
+                Date of post {{ generateDate date 'MMMM DD YYYY'}}
+            </div>
+            {{/each}}
+            <ul class="pagination justify-content-center">
+                {{#pagination current=current pages=pages}}{{/pagination}}
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+<div id="layoutSidenav">
+<div id="layoutSidenav_content">
+<div class="container-fluid px-4">
+<h2>All progression</h2>
+<form action="/admin/categories/create" method="POST">
+    <label for="name">Name</label>
+    <input id="name" type="text" name="name" class="form-control">
+    <button type="submit" class="btn btn-primary mt-3">Create</button>
+</form>
+<table class="table table-warning table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each progression}}
+    <tr>
+      <td>{{name}}</td>
+      <td><a href="/admin/progression/edit/{{id}}" class="btn btn-warning">Edit</a></td>
+      <td>
+        <form method="POST" action="/admin/progression/{{id}}?_method=DELETE">
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+</div>
+</div>
+</div>

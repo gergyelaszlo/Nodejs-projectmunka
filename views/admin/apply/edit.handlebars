@@ -1,0 +1,13 @@
+<div id="layoutSidenav">
+<div id="layoutSidenav_content">
+<form method="post" action="/admin/apply/edit/{{application.id}}?_method=PUT">
+    <label>Progress</label>
+    <select name="progress" class="form-control">
+        {{#each progression}}
+            <option value="{{id}}">{{name}}</option>
+        {{/each}}
+    </select>
+    <button type="submit" class="btn btn-primary mt-3">Add progression</button>
+</form>
+</div>
+</div>

@@ -1,0 +1,34 @@
+<div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+        <main>
+            {{#each errors}}
+                <div class="alert alert-danger">
+                    {{message}}
+                </div>
+            {{/each}}
+            <h1>Create course</h1>
+            <form action="/admin/courses/create" method="POST" enctype="multipart/form-data">
+                <label>Picture</label>
+                <input type="file"
+                       name="file"
+                       class="form-control">
+                <label>Course name</label>
+                <input required
+                       type="text"
+                       class="form-control"
+                       name="name">
+                <label>Subject</label>
+                <select name="subject" class="form-control">
+                    {{#each subjects}}
+                        <option value="{{id}}">{{title}}</option>
+                    {{/each}}
+                </select>
+                <label>Date to apply</label>
+                <input type="date"
+                       class="form-control"
+                       name="dateToApply">
+                <button type="submit" class="btn btn-primary">Create</button>
+            </form>
+        </main>
+    </div>
+</div>

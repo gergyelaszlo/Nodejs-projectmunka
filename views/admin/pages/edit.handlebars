@@ -1,0 +1,18 @@
+<div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+        <main>
+            <form method="post" action="/admin/pages/edit/{{page.id}}?_method=PUT">
+                <label>Page title</label>
+                <input type="text" class="form-control" name="title"
+                value="{{page.title}}">
+                <label>Page content</label>
+                <input type="text" class="form-control" name="content">
+                <label>Picture</label>
+                <input type="file"
+                       name="file"
+                       class="form-control">
+                <button type="submit" class="btn btn-primary mt-3">Edit</button>
+            </form>
+        </main>
+    </div>
+</div>

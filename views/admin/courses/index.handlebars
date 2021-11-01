@@ -1,0 +1,41 @@
+<div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h2>All courses</h2>
+                <table class="table table-success table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">id</th>
+                      <th scope="col">File</th>
+                      <th scope="col">Course name</th>
+                      <th scope="col">Subject</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">Date to apply</th>
+                      <th scope="col">Edit</th>
+                      <th scope="col">Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {{#each courses}}
+                    <tr>
+                      <td>{{id}}</td>
+                      <td><img height="50" src="/uploads/{{file}}"></td>
+                      <td>{{title}}</td>
+                      <td>{{subject.title}}</td>
+                      <td>{{generateDate date 'YYYY-MM-DD'}}</td>
+                      <td>{{generateDate dateToApply 'YYYY-MM-DD'}}</td>
+                      <td><a class="btn btn-warning" href="/admin/courses/edit/{{id}}">Edit</a></td>
+                      <td>
+                      <form action="/admin/courses/{{id}}?_method=DELETE" method="POST">
+                      <button type="submit" class="btn btn-danger">Delete</button>
+                      </form>
+                      </td>
+                    </tr>
+                  {{/each}}
+                  </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</div>

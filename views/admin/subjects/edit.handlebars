@@ -1,0 +1,16 @@
+<div id="layoutSidenav">
+    <div id="layoutSidenav_content">
+        <main>
+            <form method="post" action="/admin/subjects/edit/{{page.id}}?_method=PUT">
+                <label>Subject title</label>
+                <input type="text" class="form-control" name="title" required>
+                <label>Subject body</label>
+                <textarea required
+                name="body"
+                cols="30" rows="10"
+                class="form-control"></textarea>
+                <button type="submit" class="btn btn-primary mt-3">Edit</button>
+            </form>
+        </main>
+    </div>
+</div>

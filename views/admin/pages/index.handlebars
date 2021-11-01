@@ -1,0 +1,40 @@
+<div id="layoutSidenav">
+<div id="layoutSidenav_content">
+<div class="container-fluid px-4">
+<h2>All pages</h2>
+<form action="/admin/categories/create" method="POST">
+    <label for="title">Title</label>
+    <input type="text" name="title" class="form-control">
+    <label for="content">Content</label>
+    <input type="text" name="content" class="form-control">
+    <button type="submit" class="btn btn-primary mt-3">Create</button>
+</form>
+<table class="table table-warning table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">File</th>
+      <th scope="col">Body</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  {{#each pages}}
+    <tr>
+      <td>{{title}}</td>
+      <td><img height="50" src="/uploads/{{file}}"></td>
+      <td>{{content}}</td>
+      <td><a href="/admin/pages/edit/{{id}}" class="btn btn-warning">Edit</a></td>
+      <td>
+        <form method="POST" action="/admin/pages/{{id}}?_method=DELETE">
+            <button class="btn btn-danger" type="submit">Delete</button>
+        </form>
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+</div>
+</div>
+</div>
